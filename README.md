@@ -27,9 +27,9 @@ In the final day, if you hold/short the stock, we will force your slot empty as 
 
 ## 模型
 
-使用facebook所開發之prophet模型作為訓練模型，預測出training資料後20日的股價開盤價格並使用testing資料作為驗證，預測結果如下圖:
+使用facebook所開發之prophet模型作為訓練模型，預測出training資料後20日的股價開盤價格並使用testing資料作為驗證，預測結果如下圖，(y為實際股價，Forecast_Prophet為預測之股價。):
 ![下載](https://user-images.githubusercontent.com/48405514/165037613-18ccfff9-c312-40a7-972f-c974e8ae1a4e.png
-y為實際股價，Forecast_Prophet為預測之股價。
+
 
 ## 買賣策略
 因題目要求在20日內獲得最高的利益，因此買賣策略在不考慮手續費的情形下，要將每一段股價的波動都賺到，才能獲得最大收益。又因買賣的操作只能在隔一日的開盤價格做買賣，買賣的策略要評估往後至少兩日以上才能判定是否要買賣，有以下幾種情形:
