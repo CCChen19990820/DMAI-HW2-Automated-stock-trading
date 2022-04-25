@@ -26,11 +26,8 @@ In the final day, if you hold/short the stock, we will force your slot empty as 
 使用IBM 過去某5年的股票價格做為資料集，將資料集(csv檔)用pandas.dataframe讀入並賦予日期(Date)，使用簡單移動平均數（Simple Moving Average, SMA）、指數平滑移動平均線（Exponential Smoothing MovingAverage, EMA）分別計算3日、7日、30日的移動平均數，再接著計算指數平滑異同移動平均線（ Moving Average Convergence / Divergence ），將這些計算出的feature加入dataframe當中作為訓練用特徵，再來將資料集中open 做 time-1 的動作，主要是我們想要用滯後資訊來預測下一日的股價，並刪除掉有 null 的資料。
 
 ## 模型
-
 使用facebook所開發之prophet模型作為訓練模型，預測出training資料後20日的股價開盤價格並使用testing資料作為驗證，預測結果如下圖，(y為實際股價，Forecast_Prophet為預測之股價。):
 ![下載](https://user-images.githubusercontent.com/48405514/165039205-b645befb-7b2c-4a79-b30d-4b7d82f724df.png)
-
-
 
 ## 買賣策略
 因題目要求在20日內獲得最高的利益，因此買賣策略在不考慮手續費的情形下，要將每一段股價的波動都賺到，才能獲得最大收益。又因買賣的操作只能在隔一日的開盤價格做買賣，買賣的策略要評估往後至少兩日以上才能判定是否要買賣，有以下幾種情形:
@@ -43,3 +40,6 @@ In the final day, if you hold/short the stock, we will force your slot empty as 
 3.明天開盤價=後天開盤價
   不操作
 透過此買賣策略及可以在所有預測出會漲跌的波段當中賺取價差，獲得最大收益。並將結果輸出至output.csv當中。
+
+## 程式執行trader.ipb
+terminal中輸入 python3 trader.py執行，或使用colab開啟trader.ipynb檔案執行。
