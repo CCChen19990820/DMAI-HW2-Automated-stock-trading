@@ -28,7 +28,8 @@ In the final day, if you hold/short the stock, we will force your slot empty as 
 ## 模型
 
 使用facebook所開發之prophet模型作為訓練模型，預測出training資料後20日的股價開盤價格並使用testing資料作為驗證，預測結果如下圖，(y為實際股價，Forecast_Prophet為預測之股價。):
-![下載](https://user-images.githubusercontent.com/48405514/165037613-18ccfff9-c312-40a7-972f-c974e8ae1a4e.png
+![下載](https://user-images.githubusercontent.com/48405514/165039205-b645befb-7b2c-4a79-b30d-4b7d82f724df.png)
+
 
 
 ## 買賣策略
