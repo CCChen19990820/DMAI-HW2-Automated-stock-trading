@@ -15,7 +15,7 @@ import argparse
 def run(train,test,output):
   # 讀入series
   colnames=['Open','High','Low','Close'] 
-  df_temp = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/data_mining/hw2/training.csv', names=colnames)
+  df_temp = pd.read_csv(train, names=colnames)
   date = pd.date_range(start='2015/01/01',periods=len(df_temp))
   df = df_temp
   date = pd.DataFrame(date)
@@ -26,7 +26,7 @@ def run(train,test,output):
 
   # 讀入series
   colnames=['Open','High','Low','Close'] 
-  df_temp = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/data_mining/hw2/testing.csv', names=colnames)
+  df_temp = pd.read_csv(test, names=colnames)
   date2 = pd.date_range(start=date.iloc[len(date)-1,0],periods=2)
   date2 = pd.DataFrame(date2)
   date2 = pd.date_range(start=date2.iloc[len(date2)-1,0],periods=len(df_temp))
@@ -128,7 +128,7 @@ def run(train,test,output):
       answer.append(0)
   answer.append(0)
 
-  csv_file = open("/content/drive/MyDrive/Colab Notebooks/data_mining/hw2/output.csv", "w")
+  csv_file = open(output, "w")
   for i in answer:
     csv_file.write(str(i)+'\n')
   csv_file.close()
