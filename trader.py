@@ -146,9 +146,9 @@ if __name__ == '__main__':
     # You should not modify this part.
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--training',default='/content/drive/MyDrive/Colab Notebooks/data_mining/hw2/training.csv',help='input training data file name')
-    parser.add_argument('--testing',default='/content/drive/MyDrive/Colab Notebooks/data_mining/hw2/testing.csv',help='input testing data file name')
-    parser.add_argument('--output',default='/content/drive/MyDrive/Colab Notebooks/data_mining/hw2/output.csv',help='output file name')   
+    parser.add_argument('--training',default='training_data.csv',help='input training data file name')
+    parser.add_argument('--testing',default='testing_data.csv',help='input testing data file name')
+    parser.add_argument('--output',default='output.csv',help='output file name')   
     args = parser.parse_args(args=[])
 
     run(args.training, args.testing, args.output)
